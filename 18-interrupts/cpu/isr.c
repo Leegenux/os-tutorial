@@ -5,7 +5,11 @@
 
 /* Can't do this with a loop because we need the address
  * of the function names */
-void isr_install() {
+void isr_install() {  
+    /***
+     * This function sets values of each IDT in the IDTs array
+     * And after that, it init's the IDT register, which let's the system know where the gates are.
+     */
     set_idt_gate(0, (u32)isr0);
     set_idt_gate(1, (u32)isr1);
     set_idt_gate(2, (u32)isr2);
